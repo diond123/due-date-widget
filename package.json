@@ -1,7 +1,7 @@
 {
   "name": "due-date-widget",
   "productName": "Due Date Widget",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Desktop widget that shows upcoming assessment due dates parsed from your subject outlines.",
   "main": "src/main/main.js",
   "scripts": {
@@ -19,7 +19,8 @@
     "files": [
       "src/**/*",
       "package.json",
-      "assets/**/*"
+      "assets/**/*",
+      "!**/node_modules/@napi-rs/**"
     ],
     "win": {
       "target": [
