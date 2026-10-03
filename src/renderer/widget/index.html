@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'">
+  <title>Due Date Widget</title>
+  <link rel="stylesheet" href="widget.css">
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <div class="heading">
+        <div class="title">Due dates</div>
+        <div class="today" id="today"></div>
+      </div>
+      <div class="tools">
+        <button id="style" title="Appearance">🎨</button>
+        <button id="edit" title="Edit subjects">✎</button>
+        <button id="hide" title="Hide (reopen from the tray icon)">–</button>
+      </div>
+    </header>
+    <div class="panel" id="panel" hidden>
+      <div class="row">
+        <div class="label">Theme</div>
+        <div class="seg" id="presets">
+          <button data-preset="auto">Auto</button>
+          <button data-preset="dark">Dark</button>
+          <button data-preset="light">Light</button>
+          <button data-preset="glass">Glass</button>
+          <button data-preset="custom">Custom</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="label"><span>Background opacity</span><span id="opacity-val"></span></div>
+        <input type="range" id="opacity" min="0" max="100" step="1">
+      </div>
+      <div class="row colors">
+        <label>Background <input type="color" id="bg"></label>
+        <label>Text <input type="color" id="text"></label>
+      </div>
+      <div class="row">
+        <div class="label">Text size</div>
+        <div class="seg" id="sizes">
+          <button data-scale="0.9">Small</button>
+          <button data-scale="1">Medium</button>
+          <button data-scale="1.15">Large</button>
+        </div>
+      </div>
+      <div class="row buttons">
+        <button id="reset">Reset</button>
+        <button id="done" class="primary">Done</button>
+      </div>
+    </div>
+    <div class="list" id="list"></div>
+    <footer>
+      <span id="summary"></span>
+      <button id="toggle-done"></button>
+    </footer>
+  </div>
+  <script src="widget.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'">
+  <title>Due Date Widget</title>
+  <link rel="stylesheet" href="setup.css">
+</head>
+<body>
+  <aside class="rail">
+    <div class="brand"><span class="logo"></span>Due Date Widget</div>
+    <ol class="steps" id="steps">
+      <li data-step="0">Welcome</li>
+      <li data-step="1">Subject outlines</li>
+      <li data-step="2">Class times</li>
+      <li data-step="3">Review dates</li>
+    </ol>
+    <p class="rail-note">Everything stays on this computer. Outlines are read offline.</p>
+  </aside>
+
+  <main>
+    <!-- Step 0: welcome -->
+    <section class="step" data-step="0">
+      <h1>Never miss a due date</h1>
+      <p class="lead">Attach your subject outlines and enter your class times. You'll get a small widget on your desktop that lists every assessment from today on, and it opens when you log in.</p>
+      <ul class="how">
+        <li><b>1</b><span>Drop in your subject outline PDFs</span></li>
+        <li><b>2</b><span>Tell it when your lectures, tutes and pracs are</span></li>
+        <li><b>3</b><span>Check the dates it found, then you're done</span></li>
+      </ul>
+      <div class="actions"><button class="primary" data-next>Get started</button></div>
+    </section>
+
+    <!-- Step 1: outlines -->
+    <section class="step" data-step="1">
+      <h1>Subject outlines</h1>
+      <p class="lead">Drop the PDF subject outlines for this semester. Assessments, weightings and due weeks are read straight from them.</p>
+      <div class="drop" id="drop">
+        <div class="drop-icon"></div>
+        <p><b>Drop PDFs here</b> or <button class="link" id="browse">browse</button></p>
+        <p class="muted" id="drop-status"></p>
+      </div>
+      <div class="cards" id="subject-cards"></div>
+      <button class="ghost" id="add-manual">+ Add a subject manually</button>
+      <div class="actions">
+        <button data-back>Back</button>
+        <button class="primary" data-next id="to-classes" disabled>Next: class times</button>
+      </div>
+    </section>
+
+    <!-- Step 2: classes -->
+    <section class="step" data-step="2">
+      <h1>Your class times</h1>
+      <p class="lead">Some tasks are due "in your prac class" or "at the week 14 lecture". Add the day and start time of each class so those get exact dates.</p>
+      <div id="class-editors"></div>
+      <div class="actions">
+        <button data-back>Back</button>
+        <button class="primary" data-next>Next: review dates</button>
+      </div>
+    </section>
+
+    <!-- Step 3: review -->
+    <section class="step" data-step="3">
+      <h1>Review due dates</h1>
+      <p class="lead">Check what was found. You can edit anything, and add or remove rows. Highlighted rows need a look. Exams stay "TBA" until the exam timetable is out.</p>
+      <div id="review"></div>
+      <div class="actions">
+        <label class="check"><input type="checkbox" id="login" checked> Open the widget when I log in</label>
+        <span class="spacer"></span>
+        <button data-back>Back</button>
+        <button class="primary" id="finish">Finish &amp; show widget</button>
+      </div>
+    </section>
+  </main>
+
+  <template id="manual-form">
+    <div class="card manual">
+      <input class="code" placeholder="Code e.g. COMP1001" maxlength="16">
+      <input class="name" placeholder="Subject name">
+      <button class="primary add">Add</button>
+      <button class="cancel">Cancel</button>
+    </div>
+  </template>
+
+  <script src="setup.js"></script>
+</body>
+</html>

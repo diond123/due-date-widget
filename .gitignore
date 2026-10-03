@@ -1,0 +1,4 @@
+node_modules/
+dist/
+# Subject outlines are personal; never commit them.
+*.pdf
